@@ -87,5 +87,6 @@ SOC_Assessment10/
     tcn_best.pt             # trained TCN model weights
     run_log.txt             # console log of the final run
   SOC_TCN_Assessment10.pdf  # submission report (all readings, tables and figures)
+  make_report.py            # builds the PDF report from outputs/ (pip install reportlab)
   README.md                 # this file
 ```
