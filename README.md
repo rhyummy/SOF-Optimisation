@@ -26,7 +26,7 @@ Temporal Convolutional Network (TCN), based on the preprocessing pipeline from:
 | MAE (%) | 2.6937 | 2.3973 | 3.3739 | 4.4321 |
 | MAX (%) | 11.9606 | 11.2787 | 20.8800 | 24.2175 |
 | STD. DEV. (%) | 3.5748 | 3.2555 | 4.8320 | 5.8999 |
-| Total time (s) | 630.36 | 12.01 | 136.60 | 165.28 |
+| Total time (s) | 673.85 | 15.19 | 78.73 | 165.28 |
 
 Times are from the executed notebook run on a laptop CPU (Intel i5-1235U, no GPU); they vary between runs.
 
@@ -86,5 +86,6 @@ SOC_Assessment10/
     predictions_test.csv    # actual vs predicted SOC for all test instances
     tcn_best.pt             # trained TCN model weights
     run_log.txt             # console log of the final run
+  SOC_TCN_Assessment10.pdf  # submission report (all readings, tables and figures)
   README.md                 # this file
 ```
