@@ -1,7 +1,7 @@
 # %% [markdown]
 # # State of Charge (SOC) Estimation for the BMW i3 using a Temporal Convolutional Network (TCN)
 #
-# **Name:** [YOUR NAME] &nbsp; | &nbsp; **Reg. No.:** [REG. NUMBER]
+# **Name:** RHYTHM GARG &nbsp; | &nbsp; **Reg. No.:** 25BBS0153
 #
 # **Base paper:** M. H. Sulaiman and Z. Mustaffa, "State of charge estimation for electric vehicles
 # using random forest", *Green Energy and Intelligent Transportation*, 3 (2024) 100177.
@@ -59,7 +59,9 @@ import random
 import time
 
 import matplotlib
-matplotlib.use("Agg")
+import sys
+if "ipykernel" not in sys.modules:   # plain script: save figures only; notebook: show them inline
+    matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
