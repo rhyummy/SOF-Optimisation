@@ -9,7 +9,7 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, Table, Tab
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
-P = r"C:\Users\Rhythm Garg\OneDrive\Desktop\SOC_Assessment10"
+P = os.path.dirname(os.path.abspath(__file__))   # project folder
 OUT = os.path.join(P, "outputs")
 FIG = os.path.join(OUT, "figures")
 pdfmetrics.registerFont(TTFont("Arial", r"C:\Windows\Fonts\arial.ttf"))
