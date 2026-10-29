@@ -1,0 +1,203 @@
+==================================================
+Python       : 3.10.0
+PyTorch      : 2.14.1+cpu
+GPU          : None (CPU mode)
+CPU          : 12th Gen Intel(R) Core(TM) i5-1235U
+RAM          : 7.7 GB
+OS           : Windows 10
+==================================================
+PyTorch 2.14.1+cpu | device: cpu
+
+Final_60trips_Training_BMW_Data.csv: 945,026 rows
+Columns: ['Time [s]', 'Battery Voltage [V]', 'Battery Current [A]', 'Battery Temperature [°C]', 'Ambient Temperature [°C]', 'SoC [%]']
+Column mapping: {'Voltage': 'Battery Voltage [V]', 'Current': 'Battery Current [A]', 'BatteryTemp': 'Battery Temperature [°C]', 'AmbientTemp': 'Ambient Temperature [°C]', 'SOC': 'SoC [%]'} | time: Time [s] | trip: None
+Trip boundaries from time resets: 60 trip(s) | rows raw 945,026 -> cleaned 945,025
+
+Final_10trips_Testing_BMW_Data.csv: 118,974 rows
+Columns: ['Time [s]', 'Battery Voltage [V]', 'Battery Current [A]', 'Battery Temperature [°C]', 'Ambient Temperature [°C]', 'SoC [%]']
+Column mapping: {'Voltage': 'Battery Voltage [V]', 'Current': 'Battery Current [A]', 'BatteryTemp': 'Battery Temperature [°C]', 'AmbientTemp': 'Ambient Temperature [°C]', 'SOC': 'SoC [%]'} | time: Time [s] | trip: None
+Trip boundaries from time resets: 10 trip(s) | rows raw 118,974 -> cleaned 118,974
+       Rows  SOC_start  SOC_end    Set
+trip                                  
+1     10090       86.9     81.5  train
+2     14130       80.3     67.3  train
+3      6706       83.5     75.1  train
+4      4124       75.1     66.7  train
+5     13667       66.7     60.2  train
+6     31645       85.1     63.4  train
+7     20933       63.4     34.2  train
+8     28059       86.6     76.1  train
+9     18344       74.7     68.6  train
+10    14176       69.6     60.9  train
+11    14245       87.0     75.6  train
+12    16384       75.5     64.3  train
+13     7160       85.8     82.9  train
+14     6946       82.8     79.9  train
+15    22348       74.8     63.4  train
+16    19066       63.0     46.8  train
+17     6687       86.8     77.9  train
+18     8808       77.9     70.2  train
+19    15876       88.5     80.4  train
+20    17196       77.0     69.1  train
+21    19829       71.3     63.7  train
+22    18388       87.3     76.5  train
+23    10426       87.4     81.9  train
+24     5322       81.9     74.4  train
+25     7627       74.4     65.2  train
+26    16122       86.2     78.8  train
+27    20005       78.5     66.8  train
+28    17436       81.9     72.0  train
+29    13390       70.9     63.1  train
+30    13974       85.5     81.0  train
+31    11870       81.0     71.9  train
+32    16722       86.5     59.5  train
+33    32518       86.1     57.4  train
+34    16113       81.0     66.2  train
+35    15794       67.4     50.4  train
+36    29550       45.1     69.2  train
+37    10194       71.9     59.5  train
+38    13520       83.2     69.3  train
+39    18724       67.4     50.4  train
+40    29139       67.3     44.0  train
+41    35561       70.0     46.0  train
+42    20231       84.8     39.0  train
+43     7532       38.9     30.8  train
+44    32255       73.4     51.3  train
+45     3532       57.0     55.1  train
+46    38219       85.5     34.6  train
+47    18223       85.1     67.5  train
+48    15286       67.5     52.8  train
+49    15610       52.8     37.2  train
+50    11093       82.8     68.1  train
+51    11910       85.8     71.6  train
+52    14027       72.7     62.0  train
+53    10395       55.7     41.1  train
+54    11992       84.4     70.5  train
+55    11132       72.1     53.5  train
+56     9778       53.4     45.5  train
+57    10217       45.4     33.6  train
+58     8049       33.4     21.2  train
+59    14690       52.9     34.5  train
+60    12040       34.4     20.0  train
+61     9685       31.5     15.4   test
+62     9207       84.2     70.4   test
+63    10968       72.1     57.8   test
+64     7956       52.6     38.1   test
+65     5480       77.4     71.6   test
+66     2931       73.9     71.3   test
+67    13625       85.4     71.5   test
+68    28521       72.1     44.5   test
+69    14172       83.8     68.0   test
+70    16429       65.0     48.8   test
+
+Total instances: 1,063,999 | training: 945,025 (60 trips) | testing: 118,974 (10 trips)
+          Voltage     Current  BatteryTemp  AmbientTemp         SOC
+count  1063999.00  1063999.00   1063999.00   1063999.00  1063999.00
+mean       376.21      -19.44        15.50        13.22       65.10
+std         11.80       42.26         7.51         9.71       15.11
+min        301.80     -404.38        -1.00        -3.50       15.40
+25%        369.02      -32.06         9.00         5.00       56.47
+50%        379.29      -11.89        15.00         9.50       68.20
+75%        385.10       -2.10        21.00        22.00       76.50
+max        394.76      144.49        32.00        33.50       88.50
+Sampling rate: 10 Hz | coulomb-counting gain k = 1.6150 %/Ah (effective capacity 61.92 Ah)
+Physics features built in 14.1 s
+  stage 1 (voltage model)  : train-CV RMSE 3.381% | test RMSE 3.907%
+  stage 2 (fusion with CC) : train-CV RMSE 2.591% | test RMSE 3.487%
+Windows – fit: 879,119  val: 65,906  test: 118,974  (window = 120 s)
+TCN(
+  (tcn): Sequential(
+    (0): TemporalBlock(
+      (conv1): Conv1d(7, 32, kernel_size=(3,), stride=(1,))
+      (conv2): Conv1d(32, 32, kernel_size=(3,), stride=(1,))
+      (norm1): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+      (norm2): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+      (drop): Dropout(p=0.2, inplace=False)
+      (res): Conv1d(7, 32, kernel_size=(1,), stride=(1,))
+    )
+    (1): TemporalBlock(
+      (conv1): Conv1d(32, 32, kernel_size=(3,), stride=(1,), dilation=(2,))
+      (conv2): Conv1d(32, 32, kernel_size=(3,), stride=(1,), dilation=(2,))
+      (norm1): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+      (norm2): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+      (drop): Dropout(p=0.2, inplace=False)
+      (res): Identity()
+    )
+    (2): TemporalBlock(
+      (conv1): Conv1d(32, 32, kernel_size=(3,), stride=(1,), dilation=(4,))
+      (conv2): Conv1d(32, 32, kernel_size=(3,), stride=(1,), dilation=(4,))
+      (norm1): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+      (norm2): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+      (drop): Dropout(p=0.2, inplace=False)
+      (res): Identity()
+    )
+    (3): TemporalBlock(
+      (conv1): Conv1d(32, 32, kernel_size=(3,), stride=(1,), dilation=(8,))
+      (conv2): Conv1d(32, 32, kernel_size=(3,), stride=(1,), dilation=(8,))
+      (norm1): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+      (norm2): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+      (drop): Dropout(p=0.2, inplace=False)
+      (res): Identity()
+    )
+    (4): TemporalBlock(
+      (conv1): Conv1d(32, 32, kernel_size=(3,), stride=(1,), dilation=(16,))
+      (conv2): Conv1d(32, 32, kernel_size=(3,), stride=(1,), dilation=(16,))
+      (norm1): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+      (norm2): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+      (drop): Dropout(p=0.2, inplace=False)
+      (res): Identity()
+    )
+  )
+  (head): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+Trainable parameters: 30,625 | receptive field: 125 s
+Validation RMSE of the physics estimate alone (before TCN correction): 3.160%
+Epoch  1 | train RMSE  2.257% | val RMSE  3.261% | lr 1.0e-03
+Epoch  2 | train RMSE  1.775% | val RMSE  3.214% | lr 1.0e-03
+Epoch  3 | train RMSE  1.563% | val RMSE  2.630% | lr 1.0e-03
+Epoch  4 | train RMSE  1.483% | val RMSE  3.226% | lr 1.0e-03
+Epoch  5 | train RMSE  1.420% | val RMSE  3.677% | lr 1.0e-03
+Epoch  6 | train RMSE  1.384% | val RMSE  2.868% | lr 5.0e-04
+Early stopping.
+
+TCN training time: 498.45 s | best validation RMSE: 2.6301%
+Physics fusion only     : {'RMSE (%)': np.float64(3.4867), 'MAE (%)': np.float64(2.3973), 'MAX (%)': np.float64(11.2787), 'STD. DEV. (%)': np.float64(3.2555)}
+TCN (raw output)        : {'RMSE (%)': np.float32(3.5701), 'MAE (%)': np.float32(2.6825), 'MAX (%)': np.float32(11.9477), 'STD. DEV. (%)': np.float32(3.5653)}
+TCN (+60s causal filter): {'RMSE (%)': np.float64(3.5815), 'MAE (%)': np.float64(2.6937), 'MAX (%)': np.float64(11.9606), 'STD. DEV. (%)': np.float64(3.5748)}
+RF (25 trees): {'RMSE (%)': np.float64(4.9021), 'MAE (%)': np.float64(3.3739), 'MAX (%)': np.float64(20.88), 'STD. DEV. (%)': np.float64(4.832)}
+
+PERFORMANCE ON TEST DATA (testing file, 118,974 instances)
+
+                                 RMSE (%)  MAE (%)  MAX (%)  STD. DEV. (%)  Training time (s)  Testing time (s)  Total computation time (s)
+Physics-informed TCN (proposed)    3.5815   2.6937  11.9606         3.5748           512.5137           54.8946                    567.4082
+Physics fusion only (no TCN)       3.4867   2.3973  11.2787         3.2555            14.0640               NaN                     14.0640
+RF, 25 trees (re-implemented)      4.9021   3.3739  20.8800         4.8320            79.4788            0.2342                     79.7130
+RF, 25 trees (paper, best)         5.9028   4.4321  24.2175         5.8999                NaN               NaN                    165.2800
+ Trip #  Set  TCN RMSE (%)  RF RMSE (%)
+     61 test        7.6571       8.0690
+     62 test        0.7974       3.5559
+     63 test        3.2767       3.1907
+     64 test        1.2709       1.3399
+     65 test        5.5292       6.5008
+     66 test        1.2523       2.9955
+     67 test        1.5825       1.3034
+     68 test        1.4531       1.6743
+     69 test        2.5155       2.8534
+     70 test        5.3239       9.5860
+================================================================
+ FINAL RESULT – TCN SOC ESTIMATION (BMW i3, testing file)
+================================================================
+ RMSE (%)              : 3.5815
+ MAE (%)               : 2.6937
+ MAX (%)               : 11.9606
+ STD. DEV. (%)         : 3.5748
+ Training time (s)     : 512.51
+ Testing time (s)      : 54.89
+ Total computation (s) : 567.41
+ Device                : cpu
+================================================================
+Saved tables, predictions, figures and model weights to C:\Users\Rhythm Garg\OneDrive\Desktop\SOC_Assessment10\outputs
